@@ -20,6 +20,12 @@
             justify-content: center; /* Centrera horisontellt */
             align-items: center; /* Centrera vertikalt */
         }
+        .header{
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
 
         .container {
             background-color: #fff;
@@ -65,7 +71,10 @@
     </style>
 </head>
 <body>
-    <h2>Logga in</h2>
+    <div class="header">
+        <h2>Logga in</h2>
+    </div>
+    <div class="container">
     <form action="login.jsp" method="post">
         <label for="username">Användarnamn:</label><br>
         <input type="text" id="username" name="username" required><br><br>
@@ -73,5 +82,6 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Logga in">
     </form>
+        </div>
 </body>
 </html>
