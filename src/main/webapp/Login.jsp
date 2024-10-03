@@ -75,12 +75,12 @@
         <h2>Logga in</h2>
     </div>
     <div class="container">
-    <form action="LoginServlet" method="post">
+    <form action="login" method="post">
         <label for="username">Användarnamn:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Lösenord:</label><br>
         <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Logga in">
+        <input type="submit" value="Login">
 
     </form>
         </div>
