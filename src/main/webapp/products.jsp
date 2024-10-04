@@ -1,11 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="se.kth.ahmad_nedal.distributed_systems_java.BO.Product" %>
 <%@ page import="java.util.List" %>
-
-
 <%
     List<Product> products = (List<Product>) session.getAttribute("products");
 %>
+
 <html>
 <head>
     <title>Products</title>
@@ -114,12 +113,12 @@
 </head>
 <body>
 <div class="navbar">
-    <h1>Produktlista</h1>
+    <h1>Products List</h1>
     <a href="cart.jsp" class="cart-btn">
         <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Cart Icon">
     </a>
 </div>
-<h2>Tillgängliga Produkter</h2>
+<h2>Available Products</h2>
 <div class="container">
     <% if (products != null && !products.isEmpty()) { %>
     <% for (Product product : products) { %>
@@ -131,12 +130,12 @@
             <input type="hidden" name="productId" value="<%= product.getId() %>">
             <input type="hidden" name="productName" value="<%= product.getName() %>">
             <input type="hidden" name="productPrice" value="<%= product.getPrice() %>">
-            <input type="submit" value="Lägg till i kundvagn">
+            <input type="submit" value="Add to cart">
         </form>
     </div>
     <% } %>
     <% } else { %>
-    <p>Inga produkter tillgängliga för närvarande.</p>
+    <p>No products currently available</p>
     <% } %>
 </div>
 </body>

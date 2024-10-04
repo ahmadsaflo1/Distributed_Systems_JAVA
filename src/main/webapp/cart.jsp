@@ -1,17 +1,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="se.kth.ahmad_nedal.distributed_systems_java.BO.Product" %>
 <%
-    // Hämta kundvagnslistan från sessionen
     List<Product> cart = (List<Product>) session.getAttribute("cart");
-    double total = 0; // Variabel för att hålla reda på totala priset
+    double total = 0;
 %>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <title>Cart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,29 +62,11 @@
             color: #999;
             margin-top: 20px;
         }
-
-        .checkout-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-
-        .checkout-btn:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
 <div class="container">
-    <h2>Your Cart</h2>
+    <h2>Cart</h2>
     <ul>
         <% if (cart != null && !cart.isEmpty()) { %>
         <% for (Product product : cart) { %>
@@ -104,8 +82,8 @@
     </ul>
 
     <% if (cart != null && !cart.isEmpty()) { %>
-    <div class="total">Total: $<%= String.format("%.2f", total) %></div>
-    <a href="checkout.jsp" class="checkout-btn">Proceed to Checkout</a>
+    <div class="total">Total: $<%= String.format("%.2f", total) %>
+    </div>
     <% } %>
 </div>
 </body>

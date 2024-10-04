@@ -17,7 +17,6 @@ public class AddToCartServlet extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("productId"));
         String productName = request.getParameter("productName");
         double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-
         Product product = new Product(productId, productName, productPrice);
 
         HttpSession session = request.getSession();

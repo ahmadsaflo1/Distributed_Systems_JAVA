@@ -11,18 +11,18 @@ import se.kth.ahmad_nedal.distributed_systems_java.DB.UserDAO;
 import java.io.IOException;
 
 @WebServlet("/login")
-public class LoginServlet  extends HttpServlet {
-    private UserDAO userDAO = new UserDAO();
+public class LoginServlet extends HttpServlet {
+    private final UserDAO userDAO = new UserDAO();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if(userDAO.validateUser(username, password)){
+        if (userDAO.validateUser(username, password)) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
             resp.sendRedirect("products");
-        }else resp.sendRedirect("login.jsp?error=true");//// göra att visar username or password är fel
+        } else resp.sendRedirect("login.jsp?error=true");
     }
 }
