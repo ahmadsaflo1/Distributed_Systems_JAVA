@@ -22,7 +22,7 @@ public class LoginServlet  extends HttpServlet {
         if(userDAO.validateUser(username, password)){
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-            resp.sendRedirect("index.jsp");/////////////// flytta sig till product sida
+            resp.sendRedirect("products");
         }else resp.sendRedirect("login.jsp?error=true");//// göra att visar username or password är fel
     }
 }
