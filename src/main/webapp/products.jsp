@@ -21,7 +21,8 @@
             background-color: #333;
             overflow: hidden;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center;
             padding: 14px 20px;
         }
         .navbar h1 {
@@ -38,9 +39,18 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
+            margin-right: 40px;
+        }
+        .navbar .cart-btn {
+            margin-left: auto;
         }
         .navbar .cart-btn:hover {
             background-color: #218838;
+        }
+        .navbar .cart-btn img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
         }
         h2 {
             text-align: center;
@@ -91,9 +101,10 @@
 <body>
     <div class="navbar">
         <h1>Produktlista</h1>
-        <a href="cart.jsp" class="cart-btn">Visa kundvagn</a>
+        <a href="cart.jsp" class="cart-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Cart Icon">
+        </a>
     </div>
-
     <h2>Tillgängliga Produkter</h2>
     <div class="container">
         <% if (products != null && !products.isEmpty()) { %>
