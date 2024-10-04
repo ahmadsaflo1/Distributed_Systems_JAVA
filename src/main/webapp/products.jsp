@@ -16,6 +16,32 @@
             margin: 0;
             padding: 0;
         }
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 20px;
+        }
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar .cart-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar .cart-btn:hover {
+            background-color: #218838;
+        }
         h2 {
             text-align: center;
             padding: 20px;
@@ -63,24 +89,29 @@
     </style>
 </head>
 <body>
-<h2>Available Products</h2>
-<div class="container">
-    <% if (products != null && !products.isEmpty()) { %>
-    <% for (Product product : products) { %>
-    <div class="product-card">
-        <h3><%= product.getName() %></h3>
-        <p><%= product.getPrice() %> kr</p>
-        <form action="cart" method="post">
-            <input type="hidden" name="productId" value="<%= product.getId() %>">
-            <input type="hidden" name="productName" value="<%= product.getName() %>">
-            <input type="hidden" name="productPrice" value="<%= product.getPrice() %>">
-            <input type="submit" value="Lägg till i kundvagn">
-        </form>
+    <div class="navbar">
+        <h1>Produktlista</h1>
+        <a href="cart.jsp" class="cart-btn">Visa kundvagn</a>
     </div>
-    <% } %>
-    <% } else { %>
-    <p>Inga produkter tillgängliga för närvarande.</p>
-    <% } %>
-</div>
+
+    <h2>Tillgängliga Produkter</h2>
+    <div class="container">
+        <% if (products != null && !products.isEmpty()) { %>
+            <% for (Product product : products) { %>
+                <div class="product-card">
+                    <h3><%= product.getName() %></h3>
+                    <p><%= product.getPrice() %> kr</p>
+                    <form action="cart" method="post">
+                        <input type="hidden" name="productId" value="<%= product.getId() %>">
+                        <input type="hidden" name="productName" value="<%= product.getName() %>">
+                        <input type="hidden" name="productPrice" value="<%= product.getPrice() %>">
+                        <input type="submit" value="Lägg till i kundvagn">
+                    </form>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>Inga produkter tillgängliga för närvarande.</p>
+        <% } %>
+    </div>
 </body>
 </html>
