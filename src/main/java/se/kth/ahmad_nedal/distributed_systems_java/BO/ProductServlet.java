@@ -18,7 +18,8 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productDAO.getProducts();
-        request.setAttribute("products", productList);
-        request.getRequestDispatcher("products.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        session.setAttribute("products", productList);
+        response.sendRedirect("products.jsp");
     }
 }
