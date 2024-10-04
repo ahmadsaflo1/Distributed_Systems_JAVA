@@ -8,17 +8,21 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            height: 100vh; /* Full höjd */
-            display: flex; /* Använd flexbox */
-            justify-content: center; /* Centrera horisontellt */
-            align-items: center; /* Centrera vertikalt */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .header {
             position: absolute;
-            top: 20px;
+            top: 0;
             width: 100%;
+            background-color: #333;
+            padding: 10px;
+            color: white;
             text-align: center;
+            font-size: 24px;
         }
 
         .container {
@@ -27,12 +31,11 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px; /* Sätt en bredd på formuläret */
-            text-align: center; /* Centrera text i formuläret */
+            width: 300px;
         }
 
         h2 {
-            color: #333;
+            color: white;
             margin-bottom: 20px;
         }
 
@@ -43,8 +46,8 @@
 
         input[type="text"], input[type="password"] {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -52,7 +55,7 @@
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 15px;
+            padding: 10px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -65,13 +68,13 @@
 </head>
 <body>
 <div class="header">
-    <h2>Logga in</h2>
+    <h2>Login</h2>
 </div>
 <div class="container">
     <form action="login" method="post">
-        <label for="username">Användarnamn:</label><br>
+        <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Lösenord:</label><br>
+        <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>

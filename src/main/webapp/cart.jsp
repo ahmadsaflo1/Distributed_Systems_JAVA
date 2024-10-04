@@ -19,14 +19,14 @@
         .container {
             width: 60%;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: #333;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             text-align: center;
-            color: #333;
+            color: white;
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 10px;
             margin-bottom: 20px;
@@ -43,6 +43,7 @@
             display: flex;
             justify-content: space-between;
             font-size: 18px;
+            color: white;
         }
 
         li:last-child {
@@ -53,6 +54,7 @@
             font-size: 22px;
             font-weight: bold;
             text-align: right;
+            color: white;
             margin-top: 20px;
         }
 

@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
@@ -21,7 +21,7 @@
             background-color: #333;
             overflow: hidden;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding: 14px 20px;
         }
@@ -44,18 +44,11 @@
             margin-right: 40px;
         }
 
-        .navbar .cart-btn {
-            margin-left: auto;
-        }
-
-        .navbar .cart-btn:hover {
-            background-color: #218838;
-        }
-
         .navbar .cart-btn img {
             width: 20px;
             height: 20px;
             vertical-align: middle;
+
         }
 
         h2 {
@@ -98,7 +91,7 @@
         }
 
         .product-card input[type="submit"] {
-            background-color: #28a745;
+            background-color: #4CAF50;
             color: white;
             padding: 10px;
             border: none;
@@ -107,7 +100,7 @@
         }
 
         .product-card input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #45a049;
         }
     </style>
 </head>
