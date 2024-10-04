@@ -12,7 +12,7 @@ import java.util.List;
 
 @WebServlet("/products")
 public class ProductServlet extends HttpServlet {
-    private final ProductDAO productDAO = new ProductDAO();
+    private ProductDAO productDAO = new ProductDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

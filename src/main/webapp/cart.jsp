@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="se.kth.ahmad_nedal.distributed_systems_java.BO.Product" %>
 <%
-    List<Product> cart = (List<Product>) session.getAttribute("cart");
+    List<Product> cart = (List<Product>) session.getAttribute("cartList");
     double total = 0;
 %>
 
@@ -72,7 +72,7 @@
         <% for (Product product : cart) { %>
         <li>
             <span><%= product.getName() %></span>
-            <span>$<%= String.format("%.2f", product.getPrice()) %></span>
+            <span><%= String.format("%.2f", product.getPrice()) %> kr</span>
         </li>
         <% total += product.getPrice(); %>
         <% } %>
@@ -82,8 +82,7 @@
     </ul>
 
     <% if (cart != null && !cart.isEmpty()) { %>
-    <div class="total">Total: $<%= String.format("%.2f", total) %>
-    </div>
+    <div class="total">Total: <%= String.format("%.2f", total) %> kr</div>
     <% } %>
 </div>
 </body>
