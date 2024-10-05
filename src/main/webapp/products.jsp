@@ -32,23 +32,22 @@
             font-size: 24px;
         }
 
-        .navbar .cart-btn {
+        .navbar .cart-btn, .navbar .logout-btn {
             background-color: #28a745;
-            color: white;
+            color: black;
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
-            margin-right: 40px;
+            margin-right: 20px;
         }
 
         .navbar .cart-btn img {
             width: 20px;
             height: 20px;
             vertical-align: middle;
-
         }
 
         h2 {
@@ -107,17 +106,22 @@
 <body>
 <div class="navbar">
     <h1>Products List</h1>
-    <a href="cart.jsp" class="cart-btn">
-        <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Cart Icon">
-    </a>
+    <div>
+        <a href="cart.jsp" class="cart-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Cart Icon">
+        </a>
+        <form action="logout.jsp" method="post" style="display: inline;">
+            <input type="submit" value="Logga ut" class="logout-btn">
+        </form>
+    </div>
 </div>
+
 <h2>Available Products</h2>
 <div class="container">
     <% if (products != null && !products.isEmpty()) { %>
     <% for (Product product : products) { %>
     <div class="product-card">
-        <h3><%= product.getName() %>
-        </h3>
+        <h3><%= product.getName() %></h3>
         <p><%= product.getPrice() %> kr</p>
         <form action="add-to-cart" method="post">
             <input type="hidden" name="productId" value="<%= product.getId() %>">
