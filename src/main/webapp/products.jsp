@@ -110,8 +110,8 @@
         <a href="cart.jsp" class="cart-btn">
             <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Cart Icon">
         </a>
-        <form action="logout.jsp" method="post" style="display: inline;">
-            <input type="submit" value="Logga ut" class="logout-btn">
+        <form action="logout" method="post" style="display: inline;">
+            <input type="submit" value="Logout" class="logout-btn">
         </form>
     </div>
 </div>
