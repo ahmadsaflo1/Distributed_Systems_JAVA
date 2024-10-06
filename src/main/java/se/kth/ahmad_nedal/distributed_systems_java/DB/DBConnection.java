@@ -13,7 +13,7 @@ public class DBConnection {
     // Database connection parameters
     private static final String URl = "jdbc:mysql://localhost:3306/webshop"; // URL for the MySQL database
     private static final String User = "root"; // Username for database authentication
-    private static final String Pass = "2441985aA@"; // Password for database authentication
+    private static final String Pass = "1234"; // Password for database authentication
 
     /**
      * Gets a connection to the MySQL database.
