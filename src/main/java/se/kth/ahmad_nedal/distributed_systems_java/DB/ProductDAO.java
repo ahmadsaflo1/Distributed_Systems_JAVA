@@ -13,13 +13,12 @@ import java.util.List;
  * interacting with the 'products' table in the database.
  */
 public class ProductDAO {
-
     /**
      * Retrieves a list of products from the database.
      *
      * @return List<Product> - A list of Product objects retrieved from the database.
      */
-    public List<Product> getProducts() {
+    public static List<Product> getProducts() {
         List<Product> products = new ArrayList<>(); // Initialize an empty list to hold products
         String query = "SELECT * FROM products"; // SQL query to select all products
 

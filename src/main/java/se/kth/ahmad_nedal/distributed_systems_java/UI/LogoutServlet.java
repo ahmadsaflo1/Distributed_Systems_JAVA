@@ -1,4 +1,4 @@
-package se.kth.ahmad_nedal.distributed_systems_java.BO;
+package se.kth.ahmad_nedal.distributed_systems_java.UI;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

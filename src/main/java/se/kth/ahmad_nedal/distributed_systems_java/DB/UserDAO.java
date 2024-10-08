@@ -21,7 +21,7 @@ public class UserDAO {
      * @param password the password of the user trying to log in
      * @return true if the username and password match a record in the database, false otherwise
      */
-    public boolean validateUser(String username, String password) {
+    public static boolean validateUser(String username, String password) {
         // SQL query to check for matching username and password
         String query = "select * from users where username=? and password=?";
 

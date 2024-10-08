@@ -1,4 +1,4 @@
-package se.kth.ahmad_nedal.distributed_systems_java.BO;
+package se.kth.ahmad_nedal.distributed_systems_java.UI;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,9 +16,6 @@ import java.io.IOException;
  */
 @WebServlet("/login") // This annotation maps the servlet to the "/login" URL pattern.
 public class LoginServlet extends HttpServlet {
-    // Instance of UserDAO to interact with the database for user validation.
-    private final UserDAO userDAO = new UserDAO();
-
     /**
      * Handles the POST request for user login.
      *
@@ -34,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         // Validate the user credentials using UserDAO.
-        if (userDAO.validateUser(username, password)) {
+        if (UserDAO.validateUser(username, password)) {
             // If validation is successful, create a session and store the username.
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
