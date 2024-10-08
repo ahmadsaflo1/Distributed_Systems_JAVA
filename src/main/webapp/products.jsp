@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="se.kth.ahmad_nedal.distributed_systems_java.BO.Product" %>
+<%@ page import="se.kth.ahmad_nedal.distributed_systems_java.BO.ProductInfo" %>
 <%@ page import="java.util.List" %>
 <%
-    List<Product> products = (List<Product>) session.getAttribute("products");
+    List<ProductInfo> products = (List<ProductInfo>) session.getAttribute("products");
 %>
 
 <html>
@@ -119,7 +119,7 @@
 <h2>Available Products</h2>
 <div class="container">
     <% if (products != null && !products.isEmpty()) { %>
-    <% for (Product product : products) { %>
+    <% for (ProductInfo product : products) { %>
     <div class="product-card">
         <h3><%= product.getName() %></h3>
         <p><%= product.getPrice() %> kr</p>
